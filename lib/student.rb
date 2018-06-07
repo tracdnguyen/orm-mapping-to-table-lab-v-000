@@ -39,7 +39,8 @@ class Student
   end
 
   def self.create(attr)
-    obj = attr.each {|key, value| self.send(("#{key}="), value)}
-    obj
+    student = self.new(attr[:name], attr[:grade])
+    student.save
+    student
   end
 end
